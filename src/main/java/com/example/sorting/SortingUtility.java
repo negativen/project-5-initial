@@ -1,5 +1,7 @@
 package com.example.sorting;
 
+import java.util.Arrays;
+
 public class SortingUtility {
 
     /**
@@ -24,7 +26,21 @@ public class SortingUtility {
      */
     public static <T extends Comparable<T>> void gnomeSort(T[] data) {
 
-        // TODO implement pseudocode above
+        int index = 0;
+
+        while (index < data.length) {
+            if ((index == 0) || (index >= index - 1)) {
+                index = index + 1;
+            }
+            else {
+                T temp;
+                temp = data[index];
+                data[index] = data[index - 1];
+                data[index] = temp;
+                index = index - 1;
+            }
+        }
+        System.out.println(index);
 
     }
 
@@ -45,9 +61,13 @@ public class SortingUtility {
      */
     public static <T extends Comparable<T>> void gnomierSort(T[] data) {
 
-        // TODO implement pseudocode above
+        int index;
+        for (index = 1; index < data.length; index++) {
+        }
+        System.out.println(index);
+        }
 
-    }
+        // TODO implement pseudocode above
 
     /**
      * Part C Optimized Gnome Sort Algorithm
@@ -65,9 +85,19 @@ public class SortingUtility {
      * @param data
      * @param <T>
      */
-    private static <T extends Comparable<T>> void gnomierSort(T[] data, int upperBound) {
+    private static <T extends Comparable<T>> void gnomierSort(int[] data, int upperBound) {
 
-        // TODO implement pseudocode above
+        int index = upperBound;
+
+        while (index > 0 && (index - 1 > index)) {
+
+            int temp;
+            temp = data[index];
+            data[index] = data[index - 1];
+            data[index] = temp;
+            index = index + 1;
+        }
+        System.out.println(index);
     }
 
     private static <T extends Comparable<T>> void swap(T[] data, int index1, int index2) {
